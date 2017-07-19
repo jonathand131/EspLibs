@@ -7,7 +7,7 @@
         "url": "https://github.com/jonathand131/EspLibs/EspSpiffsService"
     },
     "dependencies": [
-        "EspCoreArchitecture",
+        "EspCoreArchitecture"
     ],
     "frameworks": "arduino",
     "platforms": "espressif8266"
