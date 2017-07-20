@@ -6,9 +6,9 @@
         "type": "git",
         "url": "https://github.com/jonathand131/EspLibs/EspWifiService"
     },
-    "dependencies": [
-        "EspCoreArchitecture"
-    ],
+    "dependencies": {
+        "EspCoreArchitecture": "*"
+    },
     "export": {
         "include": "EspWifiService"
     },
