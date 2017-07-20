@@ -6,6 +6,9 @@
         "type": "git",
         "url": "https://github.com/jonathand131/EspLibs/EspGenericIO"
     },
+    "export": {
+        "include": "EspGenericIO"
+    },
     "frameworks": "arduino",
     "platforms": "espressif8266"
 }

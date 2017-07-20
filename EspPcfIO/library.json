@@ -9,6 +9,9 @@
     "dependencies": [
         "PCF8574_ESP"
     ],
+    "export": {
+        "include": "EspPcfIO"
+    },
     "frameworks": "arduino",
     "platforms": "espressif8266"
 }

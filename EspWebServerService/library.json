@@ -11,6 +11,9 @@
         "ESPAsyncTCP",
         "ESPAsyncWebServer"
     ],
+    "export": {
+        "include": "EspWebServerService"
+    },
     "frameworks": "arduino",
     "platforms": "espressif8266"
 }
