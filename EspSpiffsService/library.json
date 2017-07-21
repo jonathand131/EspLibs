@@ -4,7 +4,7 @@
     "description": "Service to handle Spiffs formatting/mounting/unmounting for ESP8266",
     "repository": {
         "type": "git",
-        "url": "https://github.com/jonathand131/EspLibs/EspSpiffsService"
+        "url": "https://github.com/jonathand131/EspLibs.git"
     },
     "dependencies": {
         "EspCoreArchitecture": "*"

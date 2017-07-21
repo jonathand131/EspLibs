@@ -4,7 +4,7 @@
     "description": "Service to handle WiFi for ESP8266",
     "repository": {
         "type": "git",
-        "url": "https://github.com/jonathand131/EspLibs/EspWifiService"
+        "url": "https://github.com/jonathand131/EspLibs.git"
     },
     "dependencies": {
         "EspCoreArchitecture": "*"

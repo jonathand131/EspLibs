@@ -4,7 +4,7 @@
     "description": "Provide core architecture based on applications/services paradigm for ESP8266",
     "repository": {
         "type": "git",
-        "url": "https://github.com/jonathand131/EspLibs/EspCoreArchitecture"
+        "url": "https://github.com/jonathand131/EspLibs.git"
     },
     "export": {
         "include": "EspCoreArchitecture"
