@@ -1,6 +1,6 @@
 {
     "name": "EspPcfIO",
-    "keywords": "arduino, esp8266, services",
+    "keywords": "arduino, esp8266, gpio",
     "description": "IO implementation for ESP8266 using PCF8574",
     "repository": {
         "type": "git",
