@@ -6,10 +6,18 @@
         "type": "git",
         "url": "https://github.com/jonathand131/EspLibs.git"
     },
-    "dependencies": {
-        "EspGenericIO": "*",
-        "PCF8574_ESP": "*"
-    },
+    "dependencies": [
+        {
+            "name": "EspGenericIO",
+            "frameworks": "arduino",
+            "platforms": "espressif8266"
+        },
+        {
+            "name": "PCF8574_ESP",
+            "frameworks": "arduino",
+            "platforms": "espressif8266"
+        }
+    ],
     "export": {
         "include": "EspPcfIO"
     },
