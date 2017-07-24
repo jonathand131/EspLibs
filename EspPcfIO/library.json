@@ -10,7 +10,8 @@
         {
             "name": "EspGenericIO",
             "frameworks": "arduino",
-            "platforms": "espressif8266"
+            "platforms": "espressif8266",
+            "version": "master"
         },
         {
             "name": "PCF8574_ESP",

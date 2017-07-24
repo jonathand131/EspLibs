@@ -10,7 +10,8 @@
         {
             "name": "EspCoreArchitecture",
             "frameworks": "arduino",
-            "platforms": "espressif8266"
+            "platforms": "espressif8266",
+            "version": "master"
         }
     ],
     "export": {
