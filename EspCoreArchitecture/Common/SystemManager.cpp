@@ -47,4 +47,14 @@ ApplicationsInterface* SystemManagerClass::getApplicationByName(std::string name
   return nullptr;
 }
 
+void SystemManagerClass::dispatchEvent(uint8_t event) {
+  for(ServicesInterface *srv : this->_srv_list) {
+    srv->handleEvent(event);
+  }
+  for(ApplicationsInterface *app : this->_app_list) {
+    app->handleEvent(event);
+  }
+}
+
+
 SystemManagerClass SystemManager;

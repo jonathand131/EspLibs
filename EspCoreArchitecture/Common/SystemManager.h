@@ -14,6 +14,7 @@ public:
   void registerApplication(ApplicationsInterface *app);
   ServicesInterface* getServiceByName(std::string name);
   ApplicationsInterface* getApplicationByName(std::string name);
+  void dispatchEvent(uint8_t event);
 
 private:
   std::list<ServicesInterface*> _srv_list;
