@@ -10,5 +10,5 @@
         "include": "EspGenericIO"
     },
     "frameworks": "arduino",
-    "platforms": "espressif8266"
+    "platforms": ["espressif8266", "espressif8266_stage"]
 }

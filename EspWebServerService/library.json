@@ -6,11 +6,23 @@
         "type": "git",
         "url": "https://github.com/jonathand131/EspLibs.git"
     },
-    "dependencies": {
-        "EspCoreArchitecture": "*",
-        "ESPAsyncTCP": "*",
-        "ESPAsyncWebServer": "*"
-    },
+    "dependencies": [
+        {
+            "name": "EspCoreArchitecture",
+            "frameworks": "arduino",
+            "platforms": ["espressif8266", "espressif8266_stage"]
+        },
+        {
+            "name": "ESPAsyncTCP",
+            "frameworks": "arduino",
+            "platforms": ["espressif8266", "espressif8266_stage"]
+        },
+        {
+            "name": "ESPAsyncWebServer",
+            "frameworks": "arduino",
+            "platforms": ["espressif8266", "espressif8266_stage"]
+        }
+    ],
     "export": {
         "include": "EspWebServerService"
     },

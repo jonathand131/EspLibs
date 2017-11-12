@@ -6,12 +6,16 @@
         "type": "git",
         "url": "https://github.com/jonathand131/EspLibs.git"
     },
-    "dependencies": {
-        "EspCoreArchitecture": "*"
-    },
+    "dependencies": [
+        {
+            "name": "EspCoreArchitecture",
+            "frameworks": "arduino",
+            "platforms": ["espressif8266", "espressif8266_stage"]
+        }
+    ],
     "export": {
         "include": "EspSpiffsService"
     },
     "frameworks": "arduino",
-    "platforms": "espressif8266"
+    "platforms": ["espressif8266", "espressif8266_stage"]
 }
