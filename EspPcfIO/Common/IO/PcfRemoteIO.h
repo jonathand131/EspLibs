@@ -1,8 +1,8 @@
 #ifndef __PCF_REMOTE_IO_H__
 #define __PCF_REMOTE_IO_H__
 
-#include "BaseIO.h"
 #include <pcf8574_esp.h>
+#include <Common/IO/BaseIO.h>
 
 
 class PcfRemoteIO : public BaseIO {
@@ -12,8 +12,16 @@ public:
   virtual void set(bool val);
   virtual void setMode(uint8_t mode);
 
+  typedef enum : uint8_t {
+    PCF_PIN_MODE_INVALID = 0u,
+    PCF_PIN_MODE_INPUT,
+    PCF_PIN_MODE_OUTPUT,
+    NB_PCF_PIN_MODE
+  } PcfPinMode;
+
 private:
   uint8_t pin;
+  PcfPinMode mode;
   PCF857x *pcf;
 };
 
