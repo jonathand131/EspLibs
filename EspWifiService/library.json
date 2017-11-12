@@ -10,13 +10,32 @@
         {
             "name": "EspCoreArchitecture",
             "frameworks": "arduino",
-            "platforms": "espressif8266",
-            "version": "master"
+            "platforms": ["espressif8266", "espressif8266_stage"]
+        },
+        {
+            "name": "ESP8266HTTPClient",
+            "frameworks": "arduino",
+            "platforms": ["espressif8266", "espressif8266_stage"]
+        },
+        {
+            "name": "ESP8266httpUpdate",
+            "frameworks": "arduino",
+            "platforms": ["espressif8266", "espressif8266_stage"]
+        },
+        {
+            "name": "ESP8266mDNS",
+            "frameworks": "arduino",
+            "platforms": ["espressif8266", "espressif8266_stage"]
+        },
+        {
+            "name": "ArduinoOTA",
+            "frameworks": "arduino",
+            "platforms": ["espressif8266", "espressif8266_stage"]
         }
     ],
     "export": {
         "include": "EspWifiService"
     },
     "frameworks": "arduino",
-    "platforms": "espressif8266"
+    "platforms": ["espressif8266", "espressif8266_stage"]
 }
