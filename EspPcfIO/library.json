@@ -16,7 +16,7 @@
         {
             "name": "PCF8574_ESP",
             "frameworks": "arduino",
-            "platforms": ["espressif8266", "espressif8266_stage"],
+            "platforms": ["espressif8266", "espressif8266_stage"]
         }
     ],
     "export": {
