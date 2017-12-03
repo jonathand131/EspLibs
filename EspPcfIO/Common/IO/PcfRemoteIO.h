@@ -1,28 +1,27 @@
 #ifndef __PCF_REMOTE_IO_H__
 #define __PCF_REMOTE_IO_H__
 
-#include <pcf8574_esp.h>
 #include <Common/IO/BaseIO.h>
+#include "PCF857xInt.h"
 
 
-class PcfRemoteIO : public BaseIO {
+class PcfRemoteIO : public BaseIO, public PcfIoEventHandler {
 public:
-  PcfRemoteIO(uint8_t pin, PCF857x *pcf);
+  PcfRemoteIO(uint8_t pin, PCF857xInt &pcf);
+  ~PcfRemoteIO();
   virtual bool read();
   virtual void set(bool val);
-  virtual void setMode(uint8_t mode);
-
-  typedef enum : uint8_t {
-    PCF_PIN_MODE_INVALID = 0u,
-    PCF_PIN_MODE_INPUT,
-    PCF_PIN_MODE_OUTPUT,
-    NB_PCF_PIN_MODE
-  } PcfPinMode;
+  virtual void setMode(PinMode mode);
+  virtual void attachInterruptHandler(std::function<void(void)> handler, InterruptMode mode);
+  virtual void interruptHandler(PinChangeStatus status);
+  virtual uint8_t getPin();
 
 private:
   uint8_t pin;
-  PcfPinMode mode;
-  PCF857x *pcf;
+  PinMode mode;
+  InterruptMode interrupt_mode;
+  PCF857xInt &pcf;
+  std::function<void(void)> handler;
 };
 
 struct TwoWireBusList {
