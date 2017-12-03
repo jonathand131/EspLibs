@@ -10,7 +10,8 @@ public:
   ArduinoIO(uint8_t pin);
   virtual bool read();
   virtual void set(bool val);
-  virtual void setMode(uint8_t mode);
+  virtual void setMode(PinMode mode);
+  virtual void attachInterruptHandler(std::function<void(void)> handler, InterruptMode mode);
 
 private:
   uint8_t pin;

@@ -2,6 +2,8 @@
 #define __BASE_IO_H__
 
 #include <stdint.h>
+#include <functional>
+
 
 enum IoFunc : uint8_t {
   NOT_USED=0,
@@ -10,11 +12,24 @@ enum IoFunc : uint8_t {
   SPECIAL_IO,
 };
 
+typedef enum : uint8_t {
+  PIN_INPUT = 0u,
+  PIN_OUTPUT
+} PinMode;
+
+typedef enum : uint8_t {
+  PIN_CHANGE = 0u,
+  PIN_RISING,
+  PIN_FALLING
+} InterruptMode;
+
+
 class BaseIO {
 public:
   virtual bool read() = 0;
   virtual void set(bool val) = 0;
-  virtual void setMode(uint8_t mode) = 0;
+  virtual void setMode(PinMode mode) = 0;
+  virtual void attachInterruptHandler(std::function<void(void)> handler, InterruptMode mode) = 0;
 };
 
 struct IoList {
