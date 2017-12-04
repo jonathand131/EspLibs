@@ -35,7 +35,7 @@ void PCF857xInt::interruptHandler() {
 
     uint8_t pin = io->getPin();
     uint16_t old_val = (previous_data & (1u << pin)) >> pin;
-    uint16_t new_val = (previous_data & (1u << pin)) >> pin;
+    uint16_t new_val = (new_data & (1u << pin)) >> pin;
     if(old_val != new_val) {
       io->interruptHandler((new_val > 0u) ? PcfIoEventHandler::PCF_PIN_RISED : PcfIoEventHandler::PCF_PIN_FALLED);
     }
