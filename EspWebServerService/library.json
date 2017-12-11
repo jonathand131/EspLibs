@@ -2,7 +2,7 @@
     "name": "EspWebServerService",
     "keywords": "arduino, esp8266, services, webserver",
     "description": "Web server service for ESP",
-    "version": 0.1,
+    "version": 0.2,
     "repository": {
         "type": "git",
         "url": "https://github.com/jonathand131/EspLibs.git"
@@ -19,7 +19,7 @@
             "platforms": ["espressif8266", "espressif8266_stage"]
         },
         {
-            "name": "ESPAsyncWebServer",
+            "name": "ESP Async WebServer",
             "frameworks": "arduino",
             "platforms": ["espressif8266", "espressif8266_stage"]
         }
