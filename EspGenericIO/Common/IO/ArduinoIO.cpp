@@ -25,6 +25,12 @@ void ArduinoIO::setMode(PinMode mode) {
       pinMode(this->pin, INPUT);
       break;
     }
+    
+    case PIN_INPUT_PULLUP:
+    {
+      pinMode(this->pin, INPUT_PULLUP);
+      break;
+    }
 
     default:
     {

@@ -14,7 +14,8 @@ enum IoFunc : uint8_t {
 
 typedef enum : uint8_t {
   PIN_INPUT = 0u,
-  PIN_OUTPUT
+  PIN_OUTPUT,
+  PIN_INPUT_PULLUP
 } PinMode;
 
 typedef enum : uint8_t {

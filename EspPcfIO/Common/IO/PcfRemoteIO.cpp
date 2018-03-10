@@ -23,6 +23,7 @@ void PcfRemoteIO::set(bool val) {
 void PcfRemoteIO::setMode(PinMode mode) {
   switch(mode) {
     case PIN_INPUT:
+    case PIN_INPUT_PULLUP:
     {
       this->mode = mode;
       pcf.write(this->pin, 1u);
