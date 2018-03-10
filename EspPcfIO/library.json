@@ -2,7 +2,7 @@
     "name": "EspPcfIO",
     "keywords": "arduino, esp8266, gpio",
     "description": "IO implementation for ESP8266 using PCF8574",
-    "version": 0.2.1,
+    "version": "0.2.1",
     "repository": {
         "type": "git",
         "url": "https://github.com/jonathand131/EspLibs.git"
