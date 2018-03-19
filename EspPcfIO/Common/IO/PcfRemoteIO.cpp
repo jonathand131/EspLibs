@@ -61,3 +61,7 @@ void PcfRemoteIO::interruptHandler(PinChangeStatus status) {
 uint8_t PcfRemoteIO::getPin() {
   return this->pin;
 }
+
+bool PcfRemoteIO::isInput() {
+  return ((this->mode == PIN_INPUT) || (this->mode == PIN_INPUT_PULLUP));
+}

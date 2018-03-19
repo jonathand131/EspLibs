@@ -15,6 +15,7 @@ public:
   virtual void attachInterruptHandler(std::function<void(void)> handler, InterruptMode mode);
   virtual void interruptHandler(PinChangeStatus status);
   virtual uint8_t getPin();
+  virtual bool isInput();
 
 private:
   uint8_t pin;

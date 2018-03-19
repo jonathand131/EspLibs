@@ -17,6 +17,7 @@ public:
   } PinChangeStatus;
   virtual void interruptHandler(PinChangeStatus status) = 0;
   virtual uint8_t getPin() = 0;
+  virtual bool isInput() = 0;
 };
 
 
@@ -28,8 +29,8 @@ public:
 
 private:
   void interruptHandler();
+  uint16_t int_data;
   ArduinoIO& interrupt_pin;
-  bool is8575;
   std::list<PcfIoEventHandler*> io_list;
 };
 
