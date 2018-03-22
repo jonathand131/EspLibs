@@ -24,6 +24,7 @@ public:
 class PCF857xInt : public PCF857x {
 public:
   PCF857xInt(uint8_t address, TwoWire* UseWire, ArduinoIO& interrupt_pin, bool is8575 = false);
+  void begin(uint16_t defaultValues=0xffff);
   void registerIo(PcfIoEventHandler* io);
   void unregisterIo(PcfIoEventHandler* io);
 

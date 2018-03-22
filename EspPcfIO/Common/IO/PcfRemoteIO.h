@@ -1,6 +1,8 @@
 #ifndef __PCF_REMOTE_IO_H__
 #define __PCF_REMOTE_IO_H__
 
+#include <functional>
+#include <list>
 #include <Common/IO/BaseIO.h>
 #include "PCF857xInt.h"
 
@@ -20,9 +22,12 @@ public:
 private:
   uint8_t pin;
   PinMode mode;
-  InterruptMode interrupt_mode;
   PCF857xInt &pcf;
-  std::function<void(void)> handler;
+  struct PcfRemoteIOInterruptHandler {
+    std::function<void(void)> handler;
+    InterruptMode interrupt_mode;
+  };
+  std::list<PcfRemoteIOInterruptHandler> handlers;
 };
 
 struct TwoWireBusList {

@@ -2,7 +2,7 @@
 
 
 PcfRemoteIO::PcfRemoteIO(uint8_t pin, PCF857xInt &pcf) :
-  pin(pin), pcf(pcf), mode(PIN_OUTPUT), interrupt_mode(PIN_CHANGE) {
+  pin(pin), pcf(pcf), mode(PIN_OUTPUT) {
   this->pcf.registerIo(this);
 }
 
@@ -45,16 +45,18 @@ void PcfRemoteIO::setMode(PinMode mode) {
 }
 
 void PcfRemoteIO::attachInterruptHandler(std::function<void(void)> handler, InterruptMode mode) {
-  this->handler = handler;
-  this->interrupt_mode = mode;
+  PcfRemoteIOInterruptHandler handler_info = {handler, mode};
+  this->handlers.push_back(handler_info);
 }
 
 void PcfRemoteIO::interruptHandler(PinChangeStatus status) {
-  if((this->handler) &&
-      ((this->interrupt_mode == PIN_CHANGE) ||
-      ((this->interrupt_mode == PIN_RISING) && (status == PCF_PIN_RISED)) ||
-      ((this->interrupt_mode == PIN_FALLING) && (status == PCF_PIN_FALLED)))) {
-    this->handler();
+  for(PcfRemoteIOInterruptHandler handler_info : this->handlers) {
+    if((handler_info.handler != nullptr) &&
+        ((handler_info.interrupt_mode == PIN_CHANGE) ||
+        ((handler_info.interrupt_mode == PIN_RISING) && (status == PCF_PIN_RISED)) ||
+        ((handler_info.interrupt_mode == PIN_FALLING) && (status == PCF_PIN_FALLED)))) {
+      handler_info.handler();
+    }
   }
 }
 

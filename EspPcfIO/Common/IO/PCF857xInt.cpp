@@ -12,6 +12,13 @@ PCF857xInt::PCF857xInt(
   this->interrupt_pin.attachInterruptHandler(bound_member_fn, PIN_CHANGE);
 }
 
+void PCF857xInt::begin(uint16_t defaultValues) {
+  PCF857x::begin(defaultValues);
+
+  // Initialise interrupt handle data
+  this->int_data = this->_data;
+}
+
 void PCF857xInt::registerIo(PcfIoEventHandler* io) {
   this->io_list.push_back(io);
 }
