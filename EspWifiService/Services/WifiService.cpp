@@ -103,12 +103,7 @@ void WifiServiceClass::connect() {
   WiFi.mode(WIFI_STA);
 
   Serial.println("Connecting...");
-  int status = WiFi.begin(this->ssid, this->password);
-
-  while (status == WL_DISCONNECTED) {
-    yield();
-    status = WiFi.status();
-  }
+  WiFi.begin(this->ssid, this->password);
 }
 
 void WifiServiceClass::disconnect() {
@@ -147,7 +142,9 @@ void WifiServiceClass::updateConnectionState() {
     case WL_CONNECTION_LOST:
     case WL_DISCONNECTED:
     {
-      this->state = WIFI_SERVICE_STATE_NOT_CONNECTED;
+      if(this->state != WIFI_SERVICE_STATE_CONNECTING) {
+        this->state = WIFI_SERVICE_STATE_NOT_CONNECTED;
+      }
       break;
     }
 
