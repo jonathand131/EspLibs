@@ -27,11 +27,6 @@
             "name": "ESP8266mDNS",
             "frameworks": "arduino",
             "platforms": ["espressif8266", "espressif8266_stage"]
-        },
-        {
-            "name": "ArduinoOTA",
-            "frameworks": "arduino",
-            "platforms": ["espressif8266", "espressif8266_stage"]
         }
     ],
     "export": {
